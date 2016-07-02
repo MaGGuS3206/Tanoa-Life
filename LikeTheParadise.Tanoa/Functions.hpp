@@ -377,23 +377,28 @@ class Life_Client_Core {
 
 
 	class CopPlaceables	{
-	file = "core\cop\placeables";
-	class placeablesInit {};
-	class placeablesMenu {};
-	class placeablesRemoveAll {};
-	class placeablePlace {};
-	class placeableCancel {};
-	class placeablesPlaceComplete {};
+	   file = "core\cop\placeables";
+	   class placeablesInit {};
+	   class placeablesMenu {};
+	   class placeablesRemoveAll {};
+	   class placeablePlace {};
+	   class placeableCancel {};
+	   class placeablesPlaceComplete {};
 	};
 
 	class CopPlaceablesMEDIC {
-	file = "core\medical\MedicPlaceables";
-	class placeablesInitMEDIC {};
-	class placeablesMenuMEDIC {};
-	class placeablesRemoveAllMEDIC {};
-	class placeablePlaceMEDIC {};
-	class placeableCancelMEDIC {};
-	class placeablesPlaceCompleteMEDIC {};
-};
+	   file = "core\medical\MedicPlaceables";
+	   class placeablesInitMEDIC {};
+	   class placeablesMenuMEDIC {};
+	   class placeablesRemoveAllMEDIC {};
+	   class placeablePlaceMEDIC {};
+	   class placeableCancelMEDIC {};
+	   class placeablesPlaceCompleteMEDIC {};
+    };
 
+    class Ausweis {
+        file = "scripts\Ausweis";
+        class Lizenzsehen {};
+        class Lizenzzeigen {};
+    };
 };
