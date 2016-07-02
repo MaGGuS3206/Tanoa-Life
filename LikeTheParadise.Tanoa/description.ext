@@ -201,12 +201,14 @@ class CfgNotifications {
         priority = 5;
     };
 
+    
     class PolizeiRundfunk {
-        title = "STR_PolizeiMessage_Title";
-        iconPicture = "icons\messagepolice.paa"; //Icon kann geändert werden, kein Icon = leere ""
-        description = "%1";
-        duration = 10;
-        priority = 5;
+		title = "Polizei Rundfunk";
+		iconPicture = ""; //Icon kann geändert werden, kein Icon = leere ""
+		description = "%1";
+		duration = 10;
+		priority = 5;
     };
+
 };
 
