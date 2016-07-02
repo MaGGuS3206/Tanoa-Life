@@ -216,16 +216,16 @@ compileFinal "
 
 TON_fnc_cell_polizeimsgall = //NEW
 compileFinal "
- if(isServer) exitWith {};
- if((call life_coplevel) < 10) exitWith {hint ""Du bist dazu nicht berechtigt!"";};
- private[""_msg"",""_from""];
- ctrlShow[3023,false];
- _msg = ctrlText 3003;
- if(_msg == """") exitWith {hint ""Du musst eine Nachricht eingeben!"";ctrlShow[3023,true];};
- [_msg,name player,6] remoteExecCall [""TON_fnc_clientMessage"",-2];
- [] call life_fnc_cellphone;
- hint format[""gesendete Rundfunknachricht"": %1"",_msg];
- ctrlShow[3023,true];
+    if(isServer) exitWith {};
+    if ((call life_coplevel) < 1) exitWith {hint ""Du bist dazu nicht berechtigt!"";};
+    private[""_msg"",""_from""];
+    ctrlShow[3023,false];
+    _msg = ctrlText 3003;
+    if (_msg isEqualTo """") exitWith {hint ""Du musst eine Nachricht eingeben!"";ctrlShow[3023,true];};
+    [_msg,name player,6] remoteExecCall [""TON_fnc_clientMessage"",-2];
+    [] call life_fnc_cellphone;
+    hint format[""gesendete Rundfunknachricht: %1"",_msg];
+    ctrlShow[3023,true];
 ";
 
 publicVariable "TON_fnc_cell_textmsg";
