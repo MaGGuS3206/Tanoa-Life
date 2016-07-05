@@ -163,15 +163,14 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-_dome = nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"];
-_rsb = nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"];
+_dome = nearestObject [[13285.831,10.525428,0.4],"Land_Offices_01_V1_F"];
+_rsb = nearestObject [[13285.831,10.525428,0.4],"Land_Offices_01_V1_F"];
 
-for "_i" from 1 to 3 do {_dome setVariable [format["bis_disabled_Door_%1",_i],1,true]; _dome animate [format["Door_%1_rot",_i],0];};
+for "_i" from 1 to 8 do {
+_dome setVariable [format["bis_disabled_Door_%1",_i],1,true];
+_dome animate [format["Door_%1_rot",_i],0];};
 _dome setVariable ["locked",true,true];
-_rsb setVariable ["locked",true,true];
-_rsb setVariable ["bis_disabled_Door_1",1,true];
 _dome allowDamage false;
-_rsb allowDamage false;
 
 /* Tell clients that the server is ready and is accepting queries */
 life_server_isReady = true;

@@ -102,3 +102,16 @@ life_vehicles = [];
 
     missionNamespace setVariable [LICENSE_VARNAME(_varName,_sideFlag),false];
 } forEach ("true" configClasses (missionConfigFile >> "Licenses"));
+
+life_prof =[["Oil_Prof","civ"],
+            ["Iron_Prof","civ"],
+            ["Copper_Prof","civ"],
+            ["Heroin_Prof","civ"],
+            ["Canabis_Prof","civ"],
+            ["Cocain_Prof","civ"],
+            ["Salt_Prof","civ"],
+            ["Fruit_Prof","civ"],
+            ["Diamond_Prof","civ"],
+            ["Rock_Prof","civ"],
+            ["Sand_Prof","civ"]
+            ];  //Setup License Variables{missionNamespace setVariable[(_x select 0),[1,0]];} foreach life_prof;

@@ -80,7 +80,7 @@ class ButtonPlaceables: Life_RscButtonMenu {
 	h = (1 / 25);
 };
 class ButtonPlaceablesMEDIC: Life_RscButtonMenu {
-	idc = 40003;		
+	idc = 40003;
 	text = "Placeables"; //<----- TO:DO LOCALIZE POLICE SIDE
 	onButtonClick = "[] spawn life_fnc_placeablesMenuMEDIC; closeDialog 0;";
 	//x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
@@ -171,7 +171,7 @@ class ButtonPlaceablesMEDIC: Life_RscButtonMenu {
  y = 0.5308 * safezoneH + safezoneY;
  w = 0.0170625 * safezoneW;
  h = 0.0308 * safezoneH;
- tooltip = "Loeschen"; 
+ tooltip = "Loeschen";
  onButtonClick = "[] call life_fnc_removeItem;";
  };
  class UseButton: life_RscButtonMenu
@@ -340,7 +340,7 @@ class ButtonPlaceablesMEDIC: Life_RscButtonMenu {
  w = 0.0315 * safezoneW;
  h = 0.056 * safezoneH;
  };
- 
+
  class Markt_Knopf: life_RscButtonMenu
  {
  idc = -1;
@@ -413,6 +413,11 @@ class ButtonPlaceablesMEDIC: Life_RscButtonMenu {
  colorText[] = {1,1,1,1};
  colorDisabled[] = {1,0,0,0.1};
  tooltip = $STR_PM_WantedList;
- }; 
+ };
+ class ProfButton : life_RscButtonMenu
+ {
+ 	text = "Proficiency";
+ 	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+ 	onButtonClick = "[] call life_fnc_profSetup;";x = 0.11;y = 0.70;w = (5.75 / 40);h = (1 / 25); };
  };
 };

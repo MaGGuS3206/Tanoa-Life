@@ -215,6 +215,8 @@ class Life_Client_Core {
         class whereAmI {};
 		class Opener {};
 		class loggedOut {};
+        class profSetUp {}; // xp sys
+        class addExp {}; // xp sys
 
     };
 

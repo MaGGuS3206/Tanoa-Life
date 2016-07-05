@@ -1,5 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project name="Altis Life RPG">
+    <Package name="Life_Prof">
+        <Key ID="STR_Prof_Oil">
+            <Original>Oil Proficiency</Original>
+            <English>Oil Proficiency</English><German>Öl Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+        <Key ID="STR_Prof_Sand">
+            <Original>Sand Proficiency</Original>
+            <English>Sand Proficiency</English>
+            <German>Sand Können</German>
+            <French>compétence d'sable</French>
+            <Italian>Proficiency sabbia</Italian>
+            <Portuguese>areia de Proficiência </Portuguese>
+        </Key
+        ><Key ID="STR_Prof_Rock">
+            <Original>Rock Proficiency</Original>
+            <English>Rock Proficiency</English>
+            <German>Stein Können</German>
+            <French>compétence d'rock</French>
+            <Italian>Proficiency roccia</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+        <Key ID="STR_Prof_Salt">
+            <Original>Salt Proficiency</Original>
+            <English>Salt Proficiency</English>
+            <German>Salz Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+        <Key ID="STR_Prof_Canabis">
+            <Original>Cannabis Proficiency</Original>
+            <English>Cannabis Proficiency</English>
+            <German>Cannabis Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+        <Key ID="STR_Prof_Heroin">
+            <Original>Heroin Proficiency</Original>
+            <English>Heroin Proficiency</English>
+            <German>Heroin Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+        <Key ID="STR_Prof_Cocain">
+            <Original>Cocaine Proficiency</Original>
+            <English>Cocaine Proficiency</English>
+            <German>Kokain Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+        <Key ID="STR_Prof_Diamond">
+            <Original>Diamond Proficiency</Original>
+            <English>Diamond Proficiency</English>
+            <German>Diamanten Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key><Key ID="STR_Prof_Iron">
+            <Original>Iron Proficiency</Original>
+            <English>Iron Proficiency</English>
+            <German>Eisen Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+        <Key ID="STR_Prof_Copper">
+            <Original>Copper Proficiency</Original>
+            <English>Copper Proficiency</English>
+            <German>Kupfer Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+        <Key ID="STR_Prof_Fruit">
+            <Original>Fruit Proficiency</Original>
+            <English>Fruit Proficiency</English>
+            <German>Früchte Können</German>
+            <French>compétence d'huile</French>
+            <Italian>Proficiency olio</Italian>
+            <Portuguese>Proficiência Oil</Portuguese>
+        </Key>
+    </Package>
 	<Package name="Craft">
 		<Key ID="STR_CRAFT_Title">
 			<Original>Baumenü</Original>
