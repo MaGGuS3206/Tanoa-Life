@@ -6,7 +6,7 @@
     Description:
     Passes ALL player information to the server to save player data to the database.
 */
-private["_packet","_array","_flag","_alive","_position"];
+private["_packet","_array","_flag","_alive","_position","_prof"];
 _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
 _array = [];
 _alive = alive player;
@@ -28,6 +28,16 @@ _array pushBack life_hunger;
 _array pushBack life_thirst;
 _array pushBack (damage player);
 _packet pushBack _array;
+
+_profs = [];
+{
+    if(_x select 1 == _flag) then{
+    _data = missionNamespace getVariable (_x select 0);
+    _profs pushBack [_x select 0,_data select 0,_data select 1];
+    };
+
+    } foreach life_prof;
+    _packet pushBack _profs;
 
 switch (playerSide) do {
     case civilian: {
