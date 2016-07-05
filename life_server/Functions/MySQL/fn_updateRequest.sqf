@@ -17,6 +17,7 @@ _gear = [_this,6,[],[[]]] call BIS_fnc_param;
 _stats = [_this,7,[100,100],[[]]] call BIS_fnc_param;
 _alive = [_this,9,0,[0]] call BIS_fnc_param;
 _position = [_this,10,[],[[]]] call BIS_fnc_param;
+_prof = [_this, 7,[],[[]]] call BIS_fnc_param;
 
 //Get to those error checks.
 if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};

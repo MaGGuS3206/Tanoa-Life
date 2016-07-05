@@ -4,7 +4,9 @@ Description:Add exp to given prof
 *///
 
 
-add exp_type = [_this,0,"",[""]] call BIS_fnc_param;
+// add exp
+
+_type = [_this,0,"",[""]] call BIS_fnc_param;
 _amount = [_this,1,0,[0]] call BIS_fnc_param;
 _profData = missionNamespace getVariable (_type);
 
