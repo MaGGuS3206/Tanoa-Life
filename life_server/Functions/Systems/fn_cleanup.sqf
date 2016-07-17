@@ -11,7 +11,7 @@ private "_deleted";
 _deleted = false;
 for "_i" from 0 to 1 step 0 do {
     private["_veh","_units","_fuel"];
-    uiSleep (60 * 60);
+    uiSleep (12 * 60 * 60);
     {
         _protect = false;
         _veh = _x;
@@ -53,14 +53,14 @@ for "_i" from 0 to 1 step 0 do {
         };
     } forEach vehicles;
 
-    uiSleep (3 * 60); //3 minute cool-down before next cycle.
+    uiSleep (10 * 60); //3 minute cool-down before next cycle.
     {
         if ((typeOf _x) in ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F", "Land_Can_V3_F","Land_Money_F","Land_Suitcase_F"]) then {
             deleteVehicle _x;
         };
     } forEach (allMissionObjects "Thing");
 
-    uiSleep (2 * 60);
+    uiSleep (5 * 60);
     {
         deleteVehicle _x;
     } forEach (allMissionObjects "GroundWeaponHolder");

@@ -61,7 +61,7 @@ if ((_curObject isKindOf "B_supplyCrate_F" || _curObject isKindOf "Box_IND_Grena
     };
 };
 
-if (_curObject isKindOf "House_F" && {player distance _curObject < 12} || ((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _curObject || (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _curObject)) exitWith {
+if (_curObject isKindOf "House_F" && {player distance _curObject < 12} || ((nearestObject [[13285.831,11992.301,0.4],"Land_Offices_01_V1_F"]) == _curObject)) exitWith {
     [_curObject] call life_fnc_houseMenu;
 };
 
@@ -87,8 +87,15 @@ if (_curObject isKindOf "Man" && !(_curObject isKindOf "Animal") && {!alive _cur
 
 //If target is a player then check if we can use the cop menu.
 if (isPlayer _curObject && _curObject isKindOf "Man") then {
-    if ((_curObject getVariable ["restrained",false]) && !dialog && playerSide isEqualTo west) then {
-        [_curObject] call life_fnc_copInteractionMenu;
+    if(_curObject getVariable ["restrained",false]) then {
+        if (!dialog) then {
+            if(playerside isEqualTo civilian) then {
+                [_curObject] call life_fnc_civInteractionMenu;
+            };
+            if(playerside isEqualTo west) then {
+                [_curObject] call life_fnc_copInteractionMenu;
+            };
+        };
     };
 } else {
     //OK, it wasn't a player so what is it?

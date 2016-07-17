@@ -10,10 +10,10 @@ class Life_Settings {
     spyGlass_toggle = false; //Spyglass On/Off Toggle --> True = On & False = Off
 
     /* Data Logging Settings */
-    battlEye_friendlyLogging = false; //False [default] - Read the logs from the server.rpt. True - Read the logs from the publicVariable.log. NOTE: Due to how diag_log works it will log to both files either way and the setting is merely for beautification purposes.
-    player_advancedLog = false; //False [default] - No advanced logging. True - Logs house purchase and sale, vehicle purchase, sale, and chop shopping, police arrests, and gang creations. Search for: advanced_log
-    player_moneyLog = false; //False [default] - No money logging. True - Logs player bank deposits, withdraws, and transfers, gang bank deposits and withdraws, money picked up off of the ground, and player robbery. Search for: money_log
-    player_deathLog = false; //False [default] - No death logging. True - Logs victim and killer, and vehicle or weapon if used, when a player dies. Search for: death_log
+    battlEye_friendlyLogging = true; //False [default] - Read the logs from the server.rpt. True - Read the logs from the publicVariable.log. NOTE: Due to how diag_log works it will log to both files either way and the setting is merely for beautification purposes.
+    player_advancedLog = true; //False [default] - No advanced logging. True - Logs house purchase and sale, vehicle purchase, sale, and chop shopping, police arrests, and gang creations. Search for: advanced_log
+    player_moneyLog = true; //False [default] - No money logging. True - Logs player bank deposits, withdraws, and transfers, gang bank deposits and withdraws, money picked up off of the ground, and player robbery. Search for: money_log
+    player_deathLog = true; //False [default] - No death logging. True - Logs victim and killer, and vehicle or weapon if used, when a player dies. Search for: death_log
 
 /* Database Related Settings */
     /* Player Data Saving */
@@ -28,7 +28,7 @@ class Life_Settings {
 
     /* Vehicle Data Saving */
     save_vehicle_virtualItems = true; //Save virtual items inside the vehicle (all sides)(-- See defined items on next line --)
-    save_vehicle_items[] = { "pickaxe","fuelEmpty","fuelFull", "spikeStrip", "lockpick", "defuseKit","storageSmall","storageBig","redgull","coffee","waterBottle","apple","peach","tbacon","donuts","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle_soup","hen","rooster","sheep","goat","defibrillator","toolkit" };
+    save_vehicle_items[] = { "handcuffkeys","handcuffs","pickaxe","fuelEmpty","fuelFull", "spikeStrip", "lockpick", "defuseKit","storageSmall","storageBig","redgull","coffee","waterBottle","apple","peach","tbacon","donuts","rabbit","salema","ornate","mackerel","tuna","mullet","catshark","turtle_soup","hen","rooster","sheep","goat","defibrillator","toolkit" };
     save_vehicle_inventory = true; //Save Arma inventory of vehicle to the database
     save_vehicle_fuel = true; //Save vehicle fuel level to the database (Impounded/Garaged).
     save_vehicle_damage = false; //Save vehicle damage to the database.
@@ -91,7 +91,7 @@ class Life_Settings {
 
     /* Medical System Configurations */
     revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
-    revive_fee = 2000; //Revive fee that players have to pay and medics only EMS(independent) are rewarded with this amount.
+    revive_fee = 15000; //Revive fee that players have to pay and medics only EMS(independent) are rewarded with this amount.
     hospital_heal_fee = 1000; //Fee to heal at a hospital NPC
 
     /* Paycheck & Bank System Configurations */
@@ -99,7 +99,7 @@ class Life_Settings {
     bank_civ = 20000; //Amount of cash in bank for new civillians
     bank_med = 20000; //Amount of cash in bank for new medics
 
-    paycheck_cop = 2000; //Payment for cops
+    paycheck_cop = 5000; //Payment for cops
     paycheck_civ = 850; //Payment for civillians
     paycheck_med = 2000; //Payment for medics
 
@@ -143,56 +143,56 @@ class Life_Settings {
 
     /* "Other" Vehicle Prices */
     vehicle_chopShop_multiplier = .25; //Chop Shop price for vehicles. TO AVOID EXPLOITS NEVER SET HIGHER THAN A PURCHASE/RENTAL multipler!   Payout = Config_vehicle Price * multiplier
-    vehicle_storage_fee_multiplier = .05; //Pull from garage cost --> Cost takes the playersides Buy Price * multiplier
+    vehicle_storage_fee_multiplier = .03; //Pull from garage cost --> Cost takes the playersides Buy Price * multiplier
     vehicle_cop_impound_multiplier = .05; //TO AVOID EXPLOITS NEVER SET HIGHER THAN A PURCHASE/RENTAL multipler!   Payout = Config_vehicle Price * multiplier
 
     /* Wanted System Settings *
     /* crimes[] = {String, Bounty, Code} */
     crimes[] = {
-        {"STR_Crime_187V","650","187V"},
-        {"STR_Crime_187","2000","187"},
-        {"STR_Crime_901","450","901"},
-        {"STR_Crime_215","200","215"},
-        {"STR_Crime_213","1000","213"},
-        {"STR_Crime_211","100","211"},
-        {"STR_Crime_207","350","207"},
-        {"STR_Crime_207A","200","207A"},
-        {"STR_Crime_390","1500","390"},
-        {"STR_Crime_487","150","487"},
-        {"STR_Crime_488","70","488"},
-        {"STR_Crime_480","100","480"},
-        {"STR_Crime_481","100","481"},
-        {"STR_Crime_482","500","482"},
-        {"STR_Crime_483","950","483"},
-        {"STR_Crime_459","650","459"},
-        {"STR_Crime_666","200","666"},
-        {"STR_Crime_667","4500","667"},
-        {"STR_Crime_668","1500","668"},
-        {"STR_Crime_1","250","1"},
-        {"STR_Crime_2","200","2"},
-        {"STR_Crime_3","150","3"},
-        {"STR_Crime_4","250","4"},
-        {"STR_Crime_5","100","5"},
-        {"STR_Crime_6","80","6"},
-        {"STR_Crime_7","150","7"},
-        {"STR_Crime_8","5000","8"},
-        {"STR_Crime_9","5000","9"},
-        {"STR_Crime_10","15000","10"},
-        {"STR_Crime_11","10000","11"},
-        {"STR_Crime_12","2500","12"},
-        {"STR_Crime_13","1500","13"},
-        {"STR_Crime_14","500","14"},
-        {"STR_Crime_15","2500","15"},
-        {"STR_Crime_16","1500","16"},
-        {"STR_Crime_17","100","17"},
-        {"STR_Crime_18","1500","18"},
-        {"STR_Crime_19","2500","19"},
-        {"STR_Crime_20","500","20"},
-        {"STR_Crime_21","500","21"},
-        {"STR_Crime_22","2000","22"},
-        {"STR_Crime_23","5000","23"},
-        {"STR_Crime_24","10000","24"},
-        {"STR_Crime_25","20000","25"}
+        {"STR_Crime_187V","65000","187V"},
+        {"STR_Crime_187","20000","187"},
+        {"STR_Crime_901","45000","901"},
+        {"STR_Crime_215","20000","215"},
+        {"STR_Crime_213","10000","213"},
+        {"STR_Crime_211","10000","211"},
+        {"STR_Crime_207","35000","207"},
+        {"STR_Crime_207A","20000","207A"},
+        {"STR_Crime_390","15000","390"},
+        {"STR_Crime_487","15000","487"},
+        {"STR_Crime_488","7000","488"},
+        {"STR_Crime_480","10000","480"},
+        {"STR_Crime_481","10000","481"},
+        {"STR_Crime_482","50000","482"},
+        {"STR_Crime_483","95000","483"},
+        {"STR_Crime_459","65000","459"},
+        {"STR_Crime_666","20000","666"},
+        {"STR_Crime_667","45000","667"},
+        {"STR_Crime_668","15000","668"},
+        {"STR_Crime_1","25000","1"},
+        {"STR_Crime_2","20000","2"},
+        {"STR_Crime_3","15000","3"},
+        {"STR_Crime_4","25000","4"},
+        {"STR_Crime_5","10000","5"},
+        {"STR_Crime_6","8000","6"},
+        {"STR_Crime_7","15000","7"},
+        {"STR_Crime_8","500000","8"},
+        {"STR_Crime_9","500000","9"},
+        {"STR_Crime_10","1500000","10"},
+        {"STR_Crime_11","1000000","11"},
+        {"STR_Crime_12","250000","12"},
+        {"STR_Crime_13","150000","13"},
+        {"STR_Crime_14","50000","14"},
+        {"STR_Crime_15","250000","15"},
+        {"STR_Crime_16","150000","16"},
+        {"STR_Crime_17","10000","17"},
+        {"STR_Crime_18","150000","18"},
+        {"STR_Crime_19","250000","19"},
+        {"STR_Crime_20","50000","20"},
+        {"STR_Crime_21","50000","21"},
+        {"STR_Crime_22","200000","22"},
+        {"STR_Crime_23","500000","23"},
+        {"STR_Crime_24","1000000","24"},
+        {"STR_Crime_25","2000000","25"}
     };
 };
 

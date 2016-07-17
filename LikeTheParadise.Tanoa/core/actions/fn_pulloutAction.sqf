@@ -7,11 +7,12 @@
     Pulls civilians out of a car if it's stopped.
 */
 private["_crew"];
-_crew = crew cursorObject;
+_crew = crew cursorTarget;
 
 {
-    if (side _x != west) then {
-        _x setVariable ["transporting",false,true]; _x setVariable ["Escorting",false,true];
+    if(side _x != independent) then {
+        _x setVariable ["transporting",false,true];
+        _x setVariable ["Escorting",false,true];
         [_x] remoteExecCall ["life_fnc_pulloutVeh",_x];
     };
 } forEach _crew;

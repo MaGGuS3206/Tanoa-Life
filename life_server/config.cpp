@@ -42,7 +42,7 @@ class CfgFunctions {
             class wantedProfUpdate {};
         };
 
-        class Jail_Sys {
+    class Jail_Sys {
             file = "\life_server\Functions\Jail";
             class jailSys {};
         };
@@ -76,6 +76,8 @@ class CfgFunctions {
             class vehicleUpdate {};
             class recupkeyforHC {};
             class handleBlastingCharge {};
+            class robShops {};
+            class shopState {};
         };
 
         class Housing {
@@ -110,7 +112,19 @@ class CfgFunctions {
             class setPlayTime {};
             class getPlayTime {};
         };
+
+		class DynMarket
+        {
+            file = "\life_server\Functions\DynMarket";
+            class calculatePrices {};
+            class config {};
+            class getUpdate {};
+            class HandleDB {};
+            class playerLogged {};
+            class sleeper {};
+		};
     };
+
 };
 
 class CfgVehicles {

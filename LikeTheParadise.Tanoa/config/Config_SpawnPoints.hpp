@@ -52,6 +52,37 @@ class CfgSpawnPoints {
             level[] = { "", "", -1 };
         };
 
+        class Oumere {
+            displayName = "Oumere";
+            spawnMarker = "civ_spawn_oumere";
+            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+            licenses[] = { { "oumere", true }, { "id", true }  };
+            level[] = { "", "", -1 };
+		};
+			class LaRochelle {
+			displayName = "La Rochelle";
+            spawnMarker = "civ_spawn_larochelle";
+            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+            licenses[] = { { "larochelle", true }, { "id", true }  };
+            level[] = { "", "", -1 };
+		};
+
+			class Lijnhaven {
+            displayName = "Lijnhaven";
+            spawnMarker = "civ_spawn_lijnhaven";
+            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+            licenses[] = { { "lijnhaven", true }, { "id", true } };
+            level[] = { "", "", -1 };
+		};
+
+			class Rautake {
+            displayName = "Rautake";
+            spawnMarker = "civ_spawn_rautake";
+            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+            licenses[] = { { "rautake", true }, { "id", true } };
+            level[] = { "", "", -1 };
+		};
+
         class RebelN {
             displayName = "Rebellen North";
             spawnMarker = "Rebelop";
@@ -66,54 +97,23 @@ class CfgSpawnPoints {
             icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
             licenses[] = { { "rebel", true } };
             level[] = { "", "", -1 };
-        };
-		
-		class HeroN {
-            displayName = "Hero North";
-            spawnMarker = "Hero_spawn_1";
+         };
+
+        class HeroS {
+            displayName = "Paramilitär HQ";
+            spawnMarker = "Heroop";
             icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
             licenses[] = { { "hero", true } };
             level[] = { "", "", -1 };
         };
-		
-		class HeroS {
-            displayName = "Hero South";
-            spawnMarker = "Hero_spawn_2";
+
+        class HeroN {
+            displayName = "Paramilitär Posten";
+            spawnMarker = "Heroop_1";
             icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
             licenses[] = { { "hero", true } };
             level[] = { "", "", -1 };
         };
-		
-		class Oumere {
-            displayName = "Oumere";
-            spawnMarker = "civ_spawn_oumere";
-            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-            licenses[] = { { "oumere", true }, { "id", true }  };
-            level[] = { "", "", -1 };
-		};
-			class LaRochelle {
-			displayName = "La Rochelle";
-            spawnMarker = "civ_spawn_larochelle";
-            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-            licenses[] = { { "larochelle", true }, { "id", true }  };
-            level[] = { "", "", -1 };
-		};
-		
-			class Lijnhaven {
-            displayName = "Lijnhaven";
-            spawnMarker = "civ_spawn_lijnhaven";
-            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-            licenses[] = { { "lijnhaven", true }, { "id", true } };
-            level[] = { "", "", -1 };
-		};	
-		
-			class Rautake {
-            displayName = "Rautake";
-            spawnMarker = "civ_spawn_rautake";
-            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
-            licenses[] = { { "rautake", true }, { "id", true } };
-            level[] = { "", "", -1 };
-		};		
 	};
 
     class Cop {
@@ -146,18 +146,24 @@ class CfgSpawnPoints {
             level[] = { "", "", -1 };
         };
 		class TanoaspecialforceHQ {
-            displayName = "Outpost";
+            displayName = "TSF HQ";
             spawnMarker = "cop_spawn_3";
             icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
             licenses[] = { { "", true } };
             level[] = { "", "", -1 };
         };
-		
+        class Airport {
+            displayName = "Air HQ";
+            spawnMarker = "cop_spawn_7";
+            icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
+            licenses[] = { { "", true } };
+            level[] = { "", "", -1 };
+        };
     };
 
     class Medic {
-        class Georgetown {
-            displayName = "Georgetown";
+        class Hauptquartier {
+            displayName = "Hauptquartier";
             spawnMarker = "medic_spawn_1";
             icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
             licenses[] = { { "", true } };
@@ -175,6 +181,14 @@ class CfgSpawnPoints {
         class Katkoula {
             displayName = "Katkoula";
             spawnMarker = "medic_spawn_3";
+            icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
+            licenses[] = { { "", true } };
+            level[] = { "", "", -1 };
+        };
+
+        class Tuvanka {
+            displayName = "Tuvanka";
+            spawnMarker = "medic_spawn_4";
             icon = "\a3\ui_f\data\map\MapControl\hospital_ca.paa";
             licenses[] = { { "", true } };
             level[] = { "", "", -1 };

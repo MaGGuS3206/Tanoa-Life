@@ -13,6 +13,7 @@ _vendor = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _type = [_this,3,"",[""]] call BIS_fnc_param;
 //Error check
 if (isNull _vendor || _type isEqualTo "" || (player distance _vendor > 10)) exitWith {};
+if (vehicle player != player) exitWith {hint "Du kannst nicht aus dem Auto verarbeiten!"};
 life_action_inUse = true;//Lock out other actions during processing.
 
 if (isClass (missionConfigFile >> "ProcessAction" >> _type)) then {
@@ -90,31 +91,40 @@ _cP = 0.01;
 
 life_is_processing = true;
 
-if(_hasLicense) then{
-    _time = 0.3;
-    _cpUp = 0.01;
-    _profName = [_type] call life_fnc_profType;
-    _data  = missionNamespace getVariable "_profName";if( _profName != "" ) then {
-        switch ( _data select 0 ) do {
-            case 1: { _time = 0.4; _cpUp = 0.01; };
-            case 2: { _time = 0.35; _cpUp = 0.01; };
-            case 3: { _time = 0.3; _cpUp = 0.01; };
-            case 4: { _time = 0.25; _cpUp = 0.01; };
-            case 5: { _time = 0.2; _cpUp = 0.01; };
-            case 6: { _time = 0.2; _cpUp = 0.02; };
-            case 7: { _time = 0.2; _cpUp = 0.03; };
-            case 8: { _time = 0.2; _cpUp = 0.04; };
-            case 9: { _time = 0.15; _cpUp = 0.05; };
-            case 10: { _time = 0.1; _cpUp = 0.07; };
-        };
-    };
-
-    while {true} do{
-        sleep _time;
-        _cP = _cP + _cpUp;
+if (_hasLicense) then {
+    for "_i" from 0 to 1 step 0 do {
+        sleep  0.28;
+        _cP = _cP + 0.01;
         _progress progressSetPosition _cP;
         _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
-        if(_cP >= 1) exitWith {};
+        if (_cP >= 1) exitWith {};
+        if (player distance _vendor > 10) exitWith {};
+    };
+    if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
+
+    {
+        [false,(_x select 0),((_x select 1)*(_minimumConversions))] call life_fnc_handleInv;
+    } count _oldItem;
+
+    {
+        [true,(_x select 0),((_x select 1)*(_minimumConversions))] call life_fnc_handleInv;
+    } count _newItem;
+
+    5 cutText ["","PLAIN"];
+    if (_minimumConversions isEqualTo (_totalConversions call BIS_fnc_lowestNum)) then {hint localize "STR_NOTF_ItemProcess";} else {hint localize "STR_Process_Partial";};
+    life_is_processing = false; life_action_inUse = false;
+	[] call life_fnc_hudUpdate;
+} else {
+    if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;[] call life_fnc_hudUpdate};
+
+    for "_i" from 0 to 1 step 0 do {
+        sleep  0.9;
+        _cP = _cP + 0.01;
+        _progress progressSetPosition _cP;
+        _pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
+        if (_cP >= 1) exitWith {};
+        if (player distance _vendor > 10) exitWith {};
+    };
 
     if (player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
     if (CASH < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};

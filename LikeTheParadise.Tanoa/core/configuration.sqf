@@ -19,6 +19,7 @@ life_garage_store = false;
 life_session_tries = 0;
 life_net_dropped = false;
 life_siren_active = false;
+life_siren2_active = false;
 life_clothing_filter = 0;
 life_clothing_uniform = -1;
 life_redgull_effect = time;
@@ -48,6 +49,8 @@ life_pos_attach = [];
 life_civ_position = [];
 life_markers = false;
 life_canpay_bail = true;
+nn_last_vehicles = [];
+nn_empInUse = false;
 nn_warnInUse = false;
 
 //Settings
@@ -102,16 +105,3 @@ life_vehicles = [];
 
     missionNamespace setVariable [LICENSE_VARNAME(_varName,_sideFlag),false];
 } forEach ("true" configClasses (missionConfigFile >> "Licenses"));
-
-life_prof =[["Oil_Prof","civ"],
-            ["Iron_Prof","civ"],
-            ["Copper_Prof","civ"],
-            ["Heroin_Prof","civ"],
-            ["Canabis_Prof","civ"],
-            ["Cocain_Prof","civ"],
-            ["Salt_Prof","civ"],
-            ["Fruit_Prof","civ"],
-            ["Diamond_Prof","civ"],
-            ["Rock_Prof","civ"],
-            ["Sand_Prof","civ"]
-            ];  //Setup License Variables{missionNamespace setVariable[(_x select 0),[1,0]];} foreach life_prof;

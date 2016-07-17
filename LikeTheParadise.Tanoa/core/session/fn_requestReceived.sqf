@@ -49,10 +49,6 @@ if (count (_this select 6) > 0) then {
 life_gear = _this select 8;
 [true] call life_fnc_loadGear;
 
-if(count (_this select 9) > 0) then {
-    {missionNamespace setVariable [(_x select 0),[parseNumber (_x select 1), parseNumber (_x select 2)]];} foreach (_this select 9);
-};
-
 //Parse side specific information.
 switch (playerSide) do {
     case west: {

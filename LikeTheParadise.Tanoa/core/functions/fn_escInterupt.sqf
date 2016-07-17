@@ -9,6 +9,8 @@
 */
 private["_abortButton","_respawnButton","_fieldManual","_escSync","_canUseControls"];
 disableSerialization;
+_respawnButton = CONTROL(49,1010);
+_respawnButton ctrlEnable false;
 
 _escSync = {
     private["_abortButton","_thread","_syncManager"];
@@ -60,7 +62,7 @@ for "_i" from 0 to 1 step 0 do {
     _usebleCtrl = call _canUseControls;
     _usebleCtrl spawn _escSync;
     if (_usebleCtrl) then {
-        _respawnButton ctrlEnable true; //Enable the button.
+        _respawnButton ctrlEnable false; //Enable the button.
     };
     waitUntil{isNull (findDisplay 49)};
 };

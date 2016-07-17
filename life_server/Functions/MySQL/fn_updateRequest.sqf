@@ -17,7 +17,6 @@ _gear = [_this,6,[],[[]]] call BIS_fnc_param;
 _stats = [_this,7,[100,100],[[]]] call BIS_fnc_param;
 _alive = [_this,9,0,[0]] call BIS_fnc_param;
 _position = [_this,10,[],[[]]] call BIS_fnc_param;
-_prof = [_this, 7,[],[[]]] call BIS_fnc_param;
 
 //Get to those error checks.
 if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};
@@ -38,8 +37,6 @@ for "_i" from 0 to count(_licenses)-1 do {
 
 _licenses = [_licenses] call DB_fnc_mresArray;
 
-_prof = [_prof] call DB_fnc_mresArray;
-
 //PLAYTIME
 _playtime = [_uid] call TON_fnc_getPlayTime;
 _playtime_update = [];
@@ -50,9 +47,6 @@ _playtime_update = [];
     };
 } forEach TON_fnc_playtime_values_request;
 _playtime_update = (_playtime_update select 0) select 0;
-
-_prof = [_prof] call DB_fnc_mresArray;
-
 switch (_side) do {
     case west: {_playtime_update set[0,_playtime];};
     case civilian: {_playtime_update set[2,_playtime];};
@@ -61,9 +55,9 @@ switch (_side) do {
 _playtime_update = [_playtime_update] call DB_fnc_mresArray;
 
 switch (_side) do {
-    case west: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', cop_gear='%4', cop_licenses='%5', cop_stats='%6', playtime='%7' , cop_prof='%8' WHERE playerid='%9'",_name,_cash,_bank,_gear,_licenses,_stats,_playtime_update,_uid,_prof];};
-    case civilian: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%5', arrested='%6', civ_stats='%7', civ_alive='%8', civ_position='%9' , playtime='%10' , civ_prof='%11' WHERE playerid='%12'",_name,_cash,_bank,_licenses,_gear,[_this select 8] call DB_fnc_bool,_stats,[_this select 9] call DB_fnc_bool,_position,_playtime_update,_uid,_prof];};
-    case independent: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4', med_gear='%5', med_stats='%6', playtime='%7' , med_prof='%8' WHERE playerid='%9'",_name,_cash,_bank,_licenses,_gear,_stats,_playtime_update,_uid,_prof];};
+    case west: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', cop_gear='%4', cop_licenses='%5', cop_stats='%6', playtime='%7' WHERE playerid='%8'",_name,_cash,_bank,_gear,_licenses,_stats,_playtime_update,_uid];};
+    case civilian: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', civ_licenses='%4', civ_gear='%5', arrested='%6', civ_stats='%7', civ_alive='%8', civ_position='%9', playtime='%10' WHERE playerid='%11'",_name,_cash,_bank,_licenses,_gear,[_this select 8] call DB_fnc_bool,_stats,[_this select 9] call DB_fnc_bool,_position,_playtime_update,_uid];};
+    case independent: {_query = format["UPDATE players SET name='%1', cash='%2', bankacc='%3', med_licenses='%4', med_gear='%5', med_stats='%6', playtime='%7' WHERE playerid='%8'",_name,_cash,_bank,_licenses,_gear,_stats,_playtime_update,_uid];};
 };
 
 

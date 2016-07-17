@@ -107,6 +107,13 @@ if (!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _k
     };
 };
 
+// Hero shizzle test
+
+if (side _killer isEqualTo civilian && playerSide isEqualTo west) then {
+            [4] remoteExecCall ["life_fnc_removeLicenses",_killer];
+            hint localize "STR_Civ_LicenseRemove_3";
+    };
+
 life_save_gear = [player] call life_fnc_fetchDeadGear;
 
 _containers = nearestObjects[getPosATL player,["WeaponHolderSimulated"],5];

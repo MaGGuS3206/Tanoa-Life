@@ -12,7 +12,7 @@ _unit = _this select 0;
 _container = _this select 1;
 
 _isPack = FETCH_CONFIG2(getNumber,"CfgVehicles",typeOf _container,"isBackpack");
-if (_isPack isEqualTo 1) exitWith {
+if (_isPack isEqualTo 1 && playerSide != west) exitWith {
     hint localize "STR_MISC_Backpack";
     true;
 };

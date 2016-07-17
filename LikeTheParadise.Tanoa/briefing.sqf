@@ -1,8 +1,8 @@
 waitUntil {!isNull player && player isEqualTo player};
 if (player diarySubjectExists "controls") exitWith {};
 
-player createDiarySubject ["credits","Credits"];
-player createDiarySubject ["changelog","Change Log"];
+//player createDiarySubject ["credits","Credits"];
+//player createDiarySubject ["changelog","Change Log"];
 player createDiarySubject ["serverrules","Allgemeine Regeln"];
 //player createDiarySubject ["policerules","Police Procedures/Rules"];
 //player createDiarySubject ["safezones","Safe Zones (No Killing)"];
@@ -107,7 +107,7 @@ Consider this your one and only warning.<br/><br/>
                 "
         ]
     ];
-	
+
     player createDiaryRecord ["serverrules",
         [
             "Cop Interaction",
@@ -556,7 +556,7 @@ Spacebar: Place storage container.<br/><br/>
                 "
         ]
     ];
-	
+
 	*/
     player createDiaryRecord ["controls",
         [

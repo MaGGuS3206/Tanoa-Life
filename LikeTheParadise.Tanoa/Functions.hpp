@@ -63,6 +63,9 @@ class Life_Client_Core {
         class ticketAction {};
         class unrestrain {};
 		class craftAction {};
+        class robShops {};
+        class robShops2 {};
+        class shopState {};
     };
 
     class Admin {
@@ -96,6 +99,7 @@ class Life_Client_Core {
         class robPerson {};
         class robReceive {};
         class tazed {};
+        class civInteractionMenu {};
     };
 
     class Config {
@@ -117,6 +121,7 @@ class Life_Client_Core {
         class copMarkers {};
         class copSearch {};
         class copSiren {};
+        class copSiren2 {};
         class doorAnimate {};
         class fedCamDisplay {};
         class licenseCheck {};
@@ -135,8 +140,6 @@ class Life_Client_Core {
         class ticketPrompt {};
         class vehInvSearch {};
         class wantedGrab {};
-		class showArrestDialog {};		//changed
-		class arrestDialog_Arrest {};
     };
 
     class Dialog_Controls {
@@ -215,8 +218,6 @@ class Life_Client_Core {
         class whereAmI {};
 		class Opener {};
 		class loggedOut {};
-        class profSetUp {}; // xp sys
-        class addExp {}; // xp sys
 
     };
 
@@ -378,7 +379,7 @@ class Life_Client_Core {
     };
 
 
-	class CopPlaceables	{
+    class CopPlaceables	{
 	   file = "core\cop\placeables";
 	   class placeablesInit {};
 	   class placeablesMenu {};
@@ -399,8 +400,32 @@ class Life_Client_Core {
     };
 
     class Ausweis {
-        file = "scripts\Ausweis";
+        file = "core\Ausweis";
         class Lizenzsehen {};
         class Lizenzzeigen {};
     };
+
+    class DynMarket
+    {
+        file = "core\DynMarket";
+        class bought {};
+        class update {};
+        class DisplayPrices {};
+        class LoadIntoListbox {};
+        class ForcePrice {};
+        class DYNMARKET_getPrice {};
+    };
+
+    class fuelkiller
+    {
+        file = "scripts\fuelkiller";
+        class openEmpMenu {};
+        class isEmpOperator {};
+        class scanVehicles {};
+        class warnVehicle {};
+        class empVehicle {};
+        class vehicleWarned {};
+        class vehicleEmpd {};
+    };
+
 };

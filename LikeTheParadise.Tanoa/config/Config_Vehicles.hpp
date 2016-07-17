@@ -39,14 +39,10 @@ class CarShops {
             { "C_Van_01_box_F", { "", "", -1 } },
             { "I_Truck_02_transport_F", { "", "", -1 } },
             { "I_Truck_02_covered_F", { "", "", -1 } },
-            { "B_Truck_01_transport_F", { "", "", -1 } },
             { "O_Truck_03_transport_F", { "", "", -1 } },
             { "O_Truck_03_covered_F", { "", "", -1 } },
             { "B_Truck_01_box_F", { "", "", -1 } },
-            { "O_Truck_03_device_F", { "", "", -1 } },
-            { "C_Van_01_fuel_F", { "", "", -1 } },
-            { "I_Truck_02_fuel_F", { "", "", -1 } },
-            { "B_Truck_01_fuel_F", { "", "", -1 } }
+            { "C_Van_01_fuel_F", { "", "", -1 } }
         };
     };
     class civ_air {
@@ -56,7 +52,6 @@ class CarShops {
             { "B_Heli_Light_01_F", { "", "", -1 } },
             { "O_Heli_Light_02_unarmed_F", { "", "", -1 } },
 			{ "I_Heli_Transport_02_F", { "", "", -1 } },
-            { "B_Heli_Transport_03_unarmed_F", { "", "", -1 } },
             { "O_Heli_Transport_04_box_F", { "", "", -1 } },
 			{ "B_T_VTOL_01_vehicle_F", { "", "", -1 } },
 			{ "B_T_VTOL_01_infantry_F", { "", "", -1 } },
@@ -88,24 +83,23 @@ class CarShops {
         side = "civ";
         vehicles[] = {
             { "B_Quadbike_01_F", { "", "", -1 } },
-            { "B_G_Offroad_01_F", { "", "", -1 } },
 			{ "C_Offroad_02_unarmed_F", { "", "", -1 } },
+			{ "B_T_LSV_01_unarmed_F", { "", "", -1} },
+            { "O_Truck_02_fuel_F", { "", "", -1} },
+            { "O_Truck_02_Ammo_F", { "", "", -1} },
+            { "O_Truck_03_fuel_F", { "", "", -1} },
+            { "O_Truck_03_repair_F", { "", "", -1} },
+            { "O_Truck_03_ammo_F", { "", "", -1} },
+            { "B_Truck_01_fuel_F", { "", "", -1} },
+            { "B_Truck_01_ammo_F", { "", "", -1} },
+            { "O_Truck_03_device_F", { "", "", -1} },
             { "B_Heli_Light_01_stripped_F", { "", "", -1 } },
-			{ "O_Heli_Light_02_unarmed_F", { "", "", -1 } },
-			{ "O_T_LSV_02_unarmed_F", { "", "", -1} }
-        };
-    };
-	class hero_air {
-        side = "med";
-        vehicles[] = {
-            { "C_Heli_Light_01_civil_F", { "", "", -1 } },
-            { "B_Heli_Light_01_F", { "", "", -1 } },
             { "O_Heli_Light_02_unarmed_F", { "", "", -1 } },
-			{ "I_Heli_Transport_02_F", { "", "", -1 } },
+            { "I_Heli_Transport_02_F", { "", "", -1 } },
             { "B_Heli_Transport_03_unarmed_F", { "", "", -1 } },
-            { "O_Heli_Transport_04_box_F", { "", "", -1 } },
-			{ "B_T_VTOL_01_vehicle_F", { "", "", -1 } },
-			{ "B_T_VTOL_01_infantry_F", { "", "", -1 } }
+            { "B_T_VTOL_01_vehicle_F", { "", "", -1 } },
+            { "B_T_VTOL_01_infantry_F", { "", "", -1 } }
+
         };
     };
     class med_shop {
@@ -129,26 +123,28 @@ class CarShops {
         side = "cop";
         vehicles[] = {
             { "B_GEN_Offroad_01_gen_F", { "", "", -1 } },
-			{ "C_Offroad_02_unarmed_F", { "life_coplevel", "SCALAR", 1 } },
-			{ "C_Hatchback_01_F", { "life_coplevel", "SCALAR", 2 } },
-			{ "B_Truck_01_transport_F", { "life_coplevel", "SCALAR", 3 } },
-            { "C_SUV_01_F", { "life_coplevel", "SCALAR", 4 } },
-            { "C_Hatchback_01_sport_F", { "life_coplevel", "SCALAR", 6 } },
-			{ "B_LSV_01_unarmed_F", { "life_coplevel", "SCALAR", 7 } },
+			{ "C_Offroad_02_unarmed_F", { "life_coplevel", "SCALAR", 2 } },
+            { "C_SUV_01_F", { "life_coplevel", "SCALAR", 3 } },
+            { "C_Hatchback_01_F", { "life_coplevel", "SCALAR", 4 } },
+            { "C_Hatchback_01_sport_F", { "life_coplevel", "SCALAR", 4 } },
+            { "B_T_LSV_01_unarmed_F", { "life_coplevel", "SCALAR", 5 } },
+            { "B_Truck_01_transport_F", { "life_coplevel", "SCALAR", 6 } },
+            { "B_MRAP_01_F", { "life_coplevel", "SCALAR", 9 } },
 			{ "B_CTRG_LSV_01_light_F", { "life_coplevel", "SCALAR", 7 } }
         };
     };
     class cop_air {
         side = "cop";
         vehicles[] = {
-            { "B_Heli_Light_01_F", { "life_coplevel", "SCALAR", 2 } },
 			{ "C_Heli_Light_01_civil_F", { "life_coplevel", "SCALAR", 2 } },
-			{ "O_Heli_Light_02_unarmed_F", { "life_coplevel", "SCALAR", 5 } },
-			{ "B_T_VTOL_01_vehicle_F", { "life_coplevel", "SCALAR", 7 } },
-			{ "B_T_VTOL_01_infantry_F", { "life_coplevel", "SCALAR", 7 } },
-			{ "C_Plane_civil_01_F", { "life_coplevel", "SCALAR", 4 } },
-			{ "C_Plane_civil_01_racing_F", { "life_coplevel", "SCALAR", 4 } },
-			{ "I_Heli_light_03_unarmed_F", { "life_coplevel", "SCALAR", 7 } }
+            { "B_Heli_Light_01_F", { "life_coplevel", "SCALAR", 3 } },
+			{ "O_Heli_Light_02_unarmed_F", { "life_coplevel", "SCALAR", 4 } },
+            { "I_Heli_light_03_unarmed_F", { "life_coplevel", "SCALAR", 4 } },
+            { "B_Heli_Transport_03_F", { "life_coplevel", "SCALAR", 5 } },
+			{ "B_T_VTOL_01_vehicle_F", { "life_coplevel", "SCALAR", 9 } },
+			{ "B_T_VTOL_01_infantry_F", { "life_coplevel", "SCALAR", 9 } },
+			{ "C_Plane_civil_01_F", { "life_coplevel", "SCALAR", 9 } },
+			{ "C_Plane_civil_01_racing_F", { "life_coplevel", "SCALAR", 9 } }
         };
     };
     class cop_ship {
@@ -263,6 +259,77 @@ class LifeCfgVehicles {
 		};
     };
 	*/
+
+    // Hero Fahrzeuge
+
+    class B_T_LSV_01_unarmed_F {
+        vItemSpace = 180;
+        licenses[] = { {"hero"}, {""}, {""}, {""} };
+        price = 2000000;
+        textures[] = { };
+    };
+
+    class O_Truck_03_repair_F {
+        vItemSpace = 520;
+        licenses[] = { {"hero"}, {""}, {""}, {""} };
+        price = 1200000;
+        textures[] = { };
+    };
+
+    class O_Truck_03_fuel_F {
+        vItemSpace = 300;
+        licenses[] = { {"hero"}, {""}, {""}, {""} };
+        price = 500000;
+        textures[] = { };
+    };
+
+    class O_Truck_03_ammo_F {
+        vItemSpace = 600;
+        licenses[] = { {"hero"}, {""}, {""}, {""} };
+        price = 2500000;
+        textures[] = { };
+    };
+
+
+    class O_Truck_02_Ammo_F {
+        vItemSpace = 300;
+        licenses[] = { {"hero"}, {""}, {""}, {""} };
+        price = 390000;
+        textures[] = { };
+    };
+
+    class O_Truck_02_fuel_F {
+        vItemSpace = 250;
+        licenses[] = { {"hero"}, {""}, {""}, {""} };
+        price = 300000;
+        textures[] = { };
+    };
+
+    class O_Heli_Transport_04_bench_black_F {
+        vItemSpace = 500;
+        licenses[] = { {"hero"}, {""}, {""}, {""} };
+        price = 9000000;
+        textures[] = { };
+    };
+
+    class B_Truck_01_fuel_F {
+        vItemSpace = 640;
+        vFuelSpace = 1400000;
+        licenses[] = { {"trucking"}, {""}, {""}, {""} };
+        price = 2400000;
+        textures[] = {};
+    };
+
+    class B_Truck_01_ammo_F {
+        vItemSpace = 900;
+        licenses[] = { {"hero"}, {""}, {""}, {""} };
+        price = 4500000;
+        textures[] = { };
+    };
+
+
+    // Hero Ende
+
     class B_Boat_Armed_01_minigun_F {
         vItemSpace = 175;
         licenses[] = { {""}, {"cg"}, {""}, {""} };
@@ -346,7 +413,7 @@ class LifeCfgVehicles {
     class O_Truck_03_device_F {
         vItemSpace = 1000;
         licenses[] = { {"trucking"}, {""}, {""}, {""} };
-        price = 6250000;
+        price = 6500000;
         textures[] = {
 			{ "HEX", "civ", {
                 "\A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext01_CO.paa",
@@ -504,8 +571,8 @@ class LifeCfgVehicles {
 			{ "Oliv", "reb", {
                 "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_olive_co.paa"
             } },
-			{ "Weiß", "reb", {
-                "\A3\Soft_F_Exp\Offroad_02\Data\offroad_02_ext_white_co.paa"
+			{ "Green", "reb", {
+                "textures\civ\civ_jeep.paa"
             } }
 		};
     };
@@ -940,14 +1007,6 @@ will modify the virtual space and the price of the vehicle, but other informatio
         };
     };
 
-    class B_Truck_01_fuel_F {
-        vItemSpace = 50;
-        vFuelSpace = 50000;
-        licenses[] = { {"trucking"}, {""}, {""}, {""} };
-        price = 250000;
-        textures[] = {};
-    };
-
 	class I_Heli_Transport_02_F {
         vItemSpace = 350;
         licenses[] = { {"pilot" }, {"cAir"}, {""}, {""} };
@@ -994,7 +1053,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 	class B_T_VTOL_01_vehicle_F {
         vItemSpace = 50;
         licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };
-        price = 2500000;
+        price = 10000000;
         textures[] = {
 			{ "Olive", "civ", {
                 "\A3\Air_F_Exp\VTOL_01\Data\VTOL_01_EXT01_olive_CO.paa",
@@ -1014,7 +1073,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
     class B_T_VTOL_01_infantry_F {
         vItemSpace = 10;
         licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };
-        price = 200000;
+        price = 10000000;
         textures[] = {
 			{ "Olive", "civ", {
                 "\A3\Air_F_Exp\VTOL_01\Data\VTOL_01_EXT01_olive_CO.paa",

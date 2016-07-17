@@ -21,6 +21,7 @@ class CfgRemoteExec {
         F(life_fnc_copLights,CLIENT)
         F(life_fnc_copSearch,CLIENT)
         F(life_fnc_copSiren,CLIENT)
+        F(life_fnc_copSiren2,CLIENT)
         F(life_fnc_freezePlayer,CLIENT)
         F(life_fnc_gangCreated,CLIENT)
         F(life_fnc_gangDisbanded,CLIENT)
@@ -70,7 +71,9 @@ class CfgRemoteExec {
         F(TON_fnc_player_query,CLIENT)
         F(life_fnc_vehicleEmpd,CLIENT)
         F(life_fnc_vehicleWarned,CLIENT)
-        F(life_fnc_lizenzzeigen,CLIENT)
+        F(life_fnc_robShops,CLIENT)
+        F(life_fnc_robShops2,CLIENT)
+        F(life_fnc_shopState,CLIENT)
 
         /* Server only functions */
         F(BIS_fnc_execVM,SERVER)
@@ -112,6 +115,12 @@ class CfgRemoteExec {
         F(TON_fnc_vehicleStore,SERVER)
         F(TON_fnc_vehicleUpdate,SERVER)
         F(TON_fnc_handleBlastingCharge,SERVER)
+        F(TON_fnc_robShops,SERVER)
+        F(TON_fnc_shopState,SERVER)
+        F(TON_fnc_playerLogged,SERVER) //DYN
+        F(TON_fnc_changePrice,SERVER) // DYN
+        F(TON_fnc_getUpdate,SERVER) // DYN
+        F(TON_fnc_HandleDB,SERVER) //DYN
 
         /* HeadlessClient only functions */
         F(HC_fnc_addContainer,HC)
@@ -147,7 +156,8 @@ class CfgRemoteExec {
         F(HC_fnc_wantedRemove,HC)
 
         /* Functions for everyone */
-		F(life_fnc_lizenzzeigen,ANYONE)
+		F(life_fnc_Lizenzzeigen,ANYONE)
+        F(life_fnc_Lizenzsehen,ANYONE)
         F(BIS_fnc_effectKilledAirDestruction,ANYONE)
         F(BIS_fnc_effectKilledSecondaries,ANYONE)
         F(life_fnc_animSync,ANYONE)
@@ -163,6 +173,7 @@ class CfgRemoteExec {
         F(life_fnc_setFuel,ANYONE)
         F(life_fnc_simDisable,ANYONE)
         F(SPY_fnc_notifyAdmins,ANYONE)
+        F(life_fnc_update,ANYONE) //DYN
     };
 
     class Commands {

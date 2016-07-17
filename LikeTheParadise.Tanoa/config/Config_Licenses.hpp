@@ -264,7 +264,23 @@ class Licenses {
     class rebel {
         variable = "rebel";
         displayName = "STR_License_Rebel";
-        price = 2750000;
+        price = 2000000;
+        illegal = true;
+        side = "civ";
+    };
+
+    class rebeltwo {
+        variable = "rebeltwo";
+        displayName = "STR_License_Rebeltwo";
+        price = 3000000;
+        illegal = true;
+        side = "civ";
+    };
+
+    class rebelthree {
+        variable = "rebelthree";
+        displayName = "STR_License_Rebelthree";
+        price = 4000000;
         illegal = true;
         side = "civ";
     };
@@ -272,10 +288,19 @@ class Licenses {
     class hero {
         variable = "hero";
         displayName = "STR_License_Hero";
-        price = 1500000;
+        price = 2500000;
         illegal = false;
         side = "civ";
     };
+
+    class herotwo {
+        variable = "herotwo";
+        displayName = "STR_License_Herotwo";
+        price = 500000;
+        illegal = false;
+        side = "civ";
+    };
+
     //Cop Licenses
     class cAir {
         variable = "cAir";

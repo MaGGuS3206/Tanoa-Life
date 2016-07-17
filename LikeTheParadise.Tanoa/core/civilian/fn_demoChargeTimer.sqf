@@ -2,7 +2,6 @@
 /*
     File: fn_demoChargeTimer.sqf
     Author: Bryan "Tonic" Boardwine
-
     Description:
     Starts the "Demo" timer for the police.
 */
@@ -11,7 +10,7 @@ disableSerialization;
 6 cutRsc ["life_timer","PLAIN"];
 _uiDisp = uiNamespace getVariable "life_timer";
 _timer = _uiDisp displayCtrl 38301;
-_time = time + (5 * 60);
+_time = time + (10 * 60);
 
 for "_i" from 0 to 1 step 0 do {
     if (isNull _uiDisp) then {

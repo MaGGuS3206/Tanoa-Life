@@ -216,16 +216,16 @@ compileFinal "
 
 TON_fnc_cell_polizeimsgall = //NEW
 compileFinal "
-    if(isServer) exitWith {};
-    if ((call life_coplevel) < 1) exitWith {hint ""Du bist dazu nicht berechtigt!"";};
-    private[""_msg"",""_from""];
-    ctrlShow[3023,false];
-    _msg = ctrlText 3003;
-    if (_msg isEqualTo """") exitWith {hint ""Du musst eine Nachricht eingeben!"";ctrlShow[3023,true];};
-    [_msg,name player,6] remoteExecCall [""TON_fnc_clientMessage"",-2];
-    [] call life_fnc_cellphone;
-    hint format[""gesendete Rundfunknachricht: %1"",_msg];
-    ctrlShow[3023,true];
+ if(isServer) exitWith {};
+ if((call life_coplevel) < 7) exitWith {hint ""Du bist dazu nicht berechtigt!"";};
+ private[""_msg"",""_from""];
+ ctrlShow[3023,false];
+ _msg = ctrlText 3003;
+ if(_msg == """") exitWith {hint ""Du musst eine Nachricht eingeben!"";ctrlShow[3023,true];};
+ [_msg,name player,6] remoteExecCall [""TON_fnc_clientMessage"",-2];
+ [] call life_fnc_cellphone;
+ hint format[""gesendete Rundfunknachricht: %1"",_msg];
+ ctrlShow[3023,true];
 ";
 
 publicVariable "TON_fnc_cell_textmsg";
@@ -233,8 +233,8 @@ publicVariable "TON_fnc_cell_textcop";
 publicVariable "TON_fnc_cell_textadmin";
 publicVariable "TON_fnc_cell_adminmsg";
 publicVariable "TON_fnc_cell_adminmsgall";
-publicVariable "TON_fnc_cell_polizeimsgall"; // New
 publicVariable "TON_fnc_cell_emsrequest";
+publicVariable "TON_fnc_cell_polizeimsgall";
 //Client Message
 /*
     0 = private message
@@ -289,9 +289,9 @@ compileFinal "
 
         case 3 : {
             private[""_message""];
-            _message = format[""!!! ADMIN MESSAGE: %1"",_msg];
-            _admin = format[""Sent by admin: %1"", _from];
-            hint parseText format [""<t color='#FF0000'><t size='2'><t align='center'>Admin Message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>An Admin<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
+            _message = format[""Gendarmerie: %1"",_msg];
+            _admin = format[""Sent by: %1"", _from];
+            hint parseText format [""<t color='#FF0000'><t size='2'><t align='center'>Gendarmerie<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>You<br/><t color='#33CC33'>From: <t color='#ffffff'>An Admin<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
 
             [""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
             systemChat _message;
@@ -300,11 +300,11 @@ compileFinal "
 
         case 4 : {
             private[""_message"",""_admin""];
-            _message = format[""!!!ADMIN MESSAGE: %1"",_msg];
-            _admin = format[""Sent by admin: %1"", _from];
-            hint parseText format [""<t color='#FF0000'><t size='2'><t align='center'>Admin Message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Players<br/><t color='#33CC33'>From: <t color='#ffffff'>The Admins<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
+            _message = format[""Gendarmerie: %1"",_msg];
+            _admin = format[""Sent by: %1"", _from];
+            hint parseText format [""<t color='#FF0000'><t size='2'><t align='center'>Gendarmerie<br/><br/><t color='#33CC33'><t align='left'><t size='1'>To: <t color='#ffffff'>All Players<br/><t color='#33CC33'>From: <t color='#ffffff'>Gendarmerie<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
 
-            [""AdminMessage"",[""You Have Received A Message From An Admin!""]] call bis_fnc_showNotification;
+            [""AdminMessage"",[""You Have Received A Message From The Gendarmerie!""]] call bis_fnc_showNotification;
             systemChat _message;
             if ((call life_adminlevel) > 0) then {systemChat _admin;};
         };

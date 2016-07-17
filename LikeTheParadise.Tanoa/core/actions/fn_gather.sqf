@@ -13,22 +13,64 @@ if (player getVariable "restrained") exitWith {hint localize "STR_NOTF_isrestrai
 if (player getVariable "playerSurrender") exitWith {hint localize "STR_NOTF_surrender";};
 
 life_action_inUse = true;
-_time = 0;
-_profName = [_gather] call life_fnc_profType; if( _profName != "" ) then {
-    _data = missionNamespace getVariable (_profName);
-    _time = ( 3 - (0.25 * (_data select 0)));
-    };
+_zone = "";
+_requiredItem = "";
+_zoneSize = (getNumber(missionConfigFile >> "CfgGather" >> "zoneSize"));
+_exit = false;
 
-for "_i" from 0 to 2 do{
-    player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-    waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-    };
-    sleep
-    _time;
-    };
+_resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
+for "_i" from 0 to count(_resourceCfg)-1 do {
 
-    if(([true,_gather,_diff] call life_fnc_handleInv)) then{_itemName = [([_gather,0] call life_fnc_varHandle)] call life_fnc_varToStr;titleText[format[localize "STR_NOTF_Gather_Success",_itemName,_diff],"PLAIN"];
-    if( _profName != "" ) then {[_profName,25] call life_fnc_addExp;};
+    _curConfig = _resourceCfg select _i;
+    _resource = configName _curConfig;
+    _maxGather = getNumber(_curConfig >> "amount");
+    _resourceZones = getArray(_curConfig >> "zones");
+    _requiredItem = getText(_curConfig >> "item");
+    {
+        if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {_zone = _x;};
+    } forEach _resourceZones;
+
+    if (_zone != "") exitWith {};
 };
 
+if (_zone isEqualTo "") exitWith {life_action_inUse = false;};
+
+if (_requiredItem != "") then {
+    _valItem = missionNamespace getVariable "life_inv_" + _requiredItem;
+
+    if (_valItem < 1) exitWith {
+        switch (_requiredItem) do {
+         //Messages here
+        };
+        life_action_inUse = false;
+        _exit = true;
+    };
+};
+
+if (_exit) exitWith {life_action_inUse = false;};
+
+_amount = round(random(_maxGather)) + 1;
+_diff = [_resource,_amount,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+if (_diff isEqualTo 0) exitWith {
+    hint localize "STR_NOTF_InvFull";
+    life_action_inUse = false;
+};
+
+switch (_requiredItem) do {
+    case "pickaxe": {player say3D "mining";};
+    default {player say3D "harvest";};
+};
+
+for "_i" from 0 to 6 do {
+    player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
+    waitUntil{animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";};
+    sleep 1;
+};
+
+if ([true,_resource,_diff] call life_fnc_handleInv) then {
+    _itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
+    titleText[format[localize "STR_NOTF_Gather_Success",(localize _itemName),_diff],"PLAIN"];
+};
+
+sleep 1;
 life_action_inUse = false;

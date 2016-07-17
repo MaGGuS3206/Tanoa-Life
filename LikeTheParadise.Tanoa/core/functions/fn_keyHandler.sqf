@@ -110,6 +110,53 @@ switch (_code) do {
         };
     };
 
+    //Takwondo(Traditional Martial arts in korea) (Shift + Num 1)
+    case 79:{
+    if(_shift) then {_handled = true;};
+    if ((_shift) && (vehicle player == player)) then {  cutText [format["Hi!"], "PLAIN DOWN"];
+    player playMove "gestureHi";
+        };
+    };
+
+    //Kneebend Slow (Shift + Num 2)
+    case 80:{
+    if(_shift) then {_handled = true;};
+    if ((_shift) && (vehicle player == player)) then { cutText [format["KneeBend Slow baby~"], "PLAIN DOWN"];
+    player playMove "gestureHic";
+        };
+    };
+
+    //Kneebend Fast (Shift + Num 3)
+    case 81:{
+    if(_shift) then {_handled = true;};
+    if ((_shift) && (vehicle player == player)) then { cutText [format["KneeBend more Hard!!!Move!!Move!!"], "PLAIN DOWN"];
+    player playMove "gestureHiB";
+        };
+    };
+
+    //Pushup (Shift + Num 4)
+    case 75:{
+    if(_shift) then {_handled = true;};
+    if ((_shift) && (vehicle player == player)) then { cutText [format["Pushup!!!!!!"], "PLAIN DOWN"];
+    player playMove "gesturenod";
+        };
+    };
+
+    //EMP Konsole - K
+    case 37:
+    {
+        if (!_shift && !_ctrlKey && playerSide isEqualTo west) then {
+            if (vehicle player != player) then {
+                if ((typeOf vehicle player) in ["B_Heli_Light_01_F"]) then {
+                    [] call life_fnc_openEmpMenu; [_this] call life_fnc_isEmpOperator;
+                    };
+                };
+            };
+        };
+
+
+
+
     //Map Key
     case _mapKey: {
         switch (playerSide) do {
@@ -150,9 +197,29 @@ switch (_code) do {
 
     //Restraining (Shift + R)
     case 19: {
-        if (_shift) then {_handled = true;};
-        if (_shift && playerSide isEqualTo west && {!isNull cursorObject} && {cursorObject isKindOf "Man"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
-            [] call life_fnc_restrainAction;
+        if(_shift) then {_handled = true;};
+        if(_shift) then {
+            if(playerSide isEqualTo west OR playerSide isEqualTo civilian) then {
+                if(!isNull cursorTarget) then {
+                    if(cursorTarget isKindOf "Man") then {
+                        if(isPlayer cursorTarget) then {
+                            if(side cursorTarget in [west,civilian,independent]) then {
+                                if(alive cursorTarget) then {
+                                    if(cursorTarget distance player < 3.5) then {
+                                        if(!(cursorTarget getVariable ["Escorting",false])) then {
+                                            if(!(cursorTarget getVariable ["restrained",false])) then {
+                                                if(speed cursorTarget < 1) then {
+                                                    [] call life_fnc_restrainAction;
+                                                };
+                                            };
+                                        };
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
         };
     };
 
@@ -257,53 +324,32 @@ switch (_code) do {
         };
     };
 
-	// 1
-	case 2:
-	{
-		if(playerSide == west && vehicle player != player && !life_siren1_active && ((driver vehicle player) == player)) then
-		{
-			[] spawn
-			{
-				life_siren1_active = true;
-				sleep 20;
-				life_siren1_active = false;
-			};
-			_veh = vehicle player;
-			hint "Warnung wird ausgegeben!";
-			[_veh,"SirenSpeech"] remoteExec ["life_fnc_say3D",RANY];
-		};
-	};
-	//3
-	case 3:
-	{
-		if(playerSide == west && vehicle player != player && !life_siren1_active && ((driver vehicle player) == player)) then
-		{
-			[] spawn
-			{
-				life_siren1_active = true;
-				sleep 20;
-				life_siren1_active = false;
-			};
-			_veh = vehicle player;
-			hint "Warnung wird ausgegeben!";
-			[_veh,"rechts_ran_fahren"] remoteExec ["life_fnc_say3D",RANY];
-		};
-	};
-	case 4:
-	{
-		if(playerSide == west && vehicle player != player && !life_siren1_active && ((driver vehicle player) == player)) then
-		{
-			[] spawn
-			{
-				life_siren1_active = true;
-				sleep 20;
-				life_siren1_active = false;
-			};
-			_veh = vehicle player;
-			hint "Warnung wird ausgegeben!";
-			[_veh,"Sperrgebiet"] remoteExec ["life_fnc_say3D",RANY];
-		};
-	};
+ // Shift F Key
+    case 36: {
+        if (playerSide in [west,independent] && {vehicle player != player} && {!life_siren2_active} && {((driver vehicle player) == player)}) then {
+            [] spawn {
+                life_siren2_active = true;
+                sleep 4.7;
+                life_siren2_active = false;
+            };
+
+            _veh = vehicle player;
+            if (isNil {_veh getVariable "siren2"}) then {_veh setVariable ["siren2",false,true];};
+            if ((_veh getVariable "siren2")) then {
+                titleText [localize "STR_MISC_SirensOFF","PLAIN"];
+                _veh setVariable ["siren2",false,true];
+            } else {
+                titleText [localize "STR_MISC_SirensON","PLAIN"];
+                _veh setVariable ["siren2",true,true];
+                if (playerSide isEqualTo west) then {
+                    [_veh] remoteExec ["life_fnc_copSiren2",RCLIENT];
+                } else {
+                    [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
+                };
+            };
+        };
+    };
+
 
     //O Key
     case 24: {

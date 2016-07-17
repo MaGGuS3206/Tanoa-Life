@@ -13,11 +13,19 @@ switch(_craft) do {
  _return = [
  //[Object classname, [item #1,quantity item #1,item #2,quantity item #2]],]
  ["hgun_Rook40_F", ["abzug",1,"griff",1,"gehause",1,"lauf",1]],
- ["30Rnd_9x21_Mag", ["neunmm",30,"magazin",1]],
+ ["30Rnd_9x21_Mag", ["neunmm",5,"magazin",1]],
  ["arifle_SPAR_01_blk_F", ["abzug",1,"griff",1,"gehause",6,"lauf",3,"stutze",1,"schutz",3]],
- ["30Rnd_556x45_Stanag", ["kugeln",30,"magazin",1]],
+ ["30Rnd_556x45_Stanag", ["kugeln",5,"magazin",1]],
  ["SMG_05_F", ["abzug",1,"griff",1,"gehause",2,"lauf",1,"stutze",1]],
- ["30Rnd_9x21_Mag_SMG_02", ["neunmm",30,"magazin",1]]
+ ["30Rnd_9x21_Mag_SMG_02", ["neunmm",5,"magazin",1]],
+ ["srifle_DMR_01_F", ["abzug",1,"griff",1,"gehause",6,"lauf",3,"stutze",1,"schutz",3]],
+ ["10Rnd_762x54_Mag", ["neunmm",5,"magazin",1]],
+ ["srifle_EBR_F", ["abzug",1,"griff",1,"gehause",6,"lauf",3,"stutze",1,"schutz",3]],
+ ["srifle_DMR_03_woodland_F", ["abzug",1,"griff",1,"gehause",6,"lauf",3,"stutze",1,"schutz",3]],
+ ["srifle_DMR_06_camo_F", ["abzug",1,"griff",1,"gehause",6,"lauf",3,"stutze",1,"schutz",3]],
+ ["20Rnd_762x51_Mag", ["neunmm",5,"magazin",1]],
+ ["arifle_AK12_F", ["abzug",1,"griff",1,"gehause",6,"lauf",3,"stutze",1,"schutz",3]],
+ ["30Rnd_762x39_Mag_F", ["neunmm",5,"magazin",1]]
  ];
  };
  case "uniform": {

@@ -126,7 +126,14 @@ if (playerSide isEqualTo west) then {
         };
     };
 
-    _Btn4 ctrlShow false;
+    if (playerSide isEqualTo civilian) then {
+        _Btn4 ctrlSetText localize "STR_vInAct_PullOut";
+        _Btn4 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pulloutAction; closeDialog 0;";
+        _Btn4 ctrlShow true;
+        } else {
+            _Btn4 ctrlShow false;
+        };
+
     _Btn5 ctrlShow false;
     _Btn6 ctrlShow false;
 };

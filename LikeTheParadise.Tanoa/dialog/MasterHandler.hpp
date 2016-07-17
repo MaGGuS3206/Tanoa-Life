@@ -32,5 +32,6 @@
 #include "placeables.hpp" //Maxi Cop objects
 #include "craft.hpp" // Crafting System
 #include "slot_machine.hpp" //Slotmaschine
-#include "jail_time.hpp" //Jail Time
-#include "prof.hpp" // xp system
+#include "dynmarket_changeprice.hpp"
+#include "dynmarket_prices.hpp" //DynMarket
+#include "emp_menu.hpp"
